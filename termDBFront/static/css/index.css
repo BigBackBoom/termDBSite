@@ -1,0 +1,18 @@
+/*********************************************************
+* indexようコマンド
+*
+***********************************************************/
+
+#main{
+    
+    text-align: center;
+}
+
+#search_tool {
+    
+    display: block;
+    height: 300px;
+    margin-left: auto;
+    margin: auto;
+    
+}
