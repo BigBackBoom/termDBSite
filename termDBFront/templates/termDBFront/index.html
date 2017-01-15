@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="ja">
 
 	<!-- header section-->
 	<head>
@@ -9,14 +9,21 @@
 		<meta charset="utf-8">
 		<title>規約どっとコム</title>
 		
-		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-		 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400italic,700italic,300,700,400&amp;subset=latin">
-		<link rel="stylesheet" type="text/css" href="{% static "termDBFront/css/reset.css" %}">
-		<link rel="stylesheet" type="text/css" href="{% static "termDBFront/css/template.css" %}">
-		<link rel="stylesheet" type="text/css" href="{% static "termDBFront/css/index.css" %}">
-	
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		 
+		<!-- stylesheet from internet-->
+		<link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet" />
+		<link type="text/css" href="https://fonts.googleapis.com/earlyaccess/sawarabigothic.css" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/earlyaccess/sawarabimincho.css" rel="stylesheet" />
+		
+		<!-- Website Style Sheet-->
+		<link rel="stylesheet" type="text/css" href="{% static "css/reset.css" %}">
+		<link rel="stylesheet" type="text/css" href="{% static "css/index.css" %}">
+		
+		<!-- Website Javascript-->
+		<script type="text/javascript" src="{% static "js/search.js" %}"></script>
+		
 	</head>
 
 <!-- header section end-->
@@ -31,15 +38,28 @@
 		<div id="main">
 			
 			<div id="search_tool">
-				<img style="padding-top: 120px" src="{% static "termDBFront/img/main_logo" %}">
+				<!--<img class="center" style="margin-bottom: 30px; margin-top: 220px; width: 400px;  height: 200px;" src="{% static "img/main_logo.jpg" %}">-->
+				<div style="font: bold 5.0em 'Nico Moji'; margin: auto; margin-bottom: 30px; margin-top: 220px; width: 520px;">
+					きやくドットこむ
+				</div>
+				<div class="search_box">
+					<form class="search_form cf">
+						<input class="keyword_search" type="search" name="keyword" placeholder="キーワードを入力">  
+						<button type="button" onClick="keyword_search()">検索</button>
+					</form>
+				</div>
+				
 			</div>
-			
-			
 		</div>
 		
 		<footer>
-			
-		
+			<div id="footer_nav">
+				<ul>
+					<li>サイトについて</li>
+					<li>利用条件</li>
+					<li>要望</li>
+				</ul>				
+			</div>
 		</footer>
 	
 	</body>
