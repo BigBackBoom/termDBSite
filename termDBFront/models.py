@@ -2,9 +2,48 @@ from django.db import models
 
 
 from datetime import datetime 
+from tinymce.models import HTMLField
+from tinymce.widgets import TinyMCE
+
 
 # Create your models here.
 
+class Tag(models.Model):
+    id = models.AutoField(primary_key=True)
+    tag_name = models.CharField(max_length=256)
+    
+    def __str__(self):
+        return self.tag_name
+
+class Company(models.Model):
+    id = models.AutoField(primary_key=True)
+    company_name = models.CharField(max_length=256)
+    
+    def __str__(self):
+        return self.company_name
+
+class TermData(models.Model):
+    id = models.AutoField(primary_key=True)
+    title = models.CharField(max_length=512, default='タイトルを入力')
+    content = HTMLField()
+    
+    def __str__(self):
+        return self.title
+
+class Term(models.Model):
+    id = models.AutoField(primary_key=True)
+    service_name = models.CharField(max_length=512)
+    date_published = models.DateField()
+    date_update = models.DateField()
+    company_name = models.ForeignKey(Company, on_delete=models.CASCADE)
+    term_path = models.ForeignKey(TermData, on_delete=models.CASCADE)
+    tags = models.ManyToManyField(Tag)
+    
+    def __str__(self):
+        return self.service_name
+
+    
+'''
 class Plan(models.Model):
     plan_name = models.CharField(max_length=32);
     one_week_price = models.IntegerField(default=0)
@@ -26,4 +65,4 @@ class Customer(models.Model):
 
     def __str__(self):
         return (self.first_name + " " + self.last_name)
-
+'''

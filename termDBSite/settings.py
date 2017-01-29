@@ -28,6 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     '192.168.0.3',
+    '192.168.0.5',
 ]
 
 
@@ -41,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'tinymce',
 ]
 
 MIDDLEWARE = [
@@ -79,9 +81,13 @@ WSGI_APPLICATION = 'termDBSite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+         'NAME': 'termdb',
+         'USER': 'siteadmin',
+         'PASSWORD' : 'osanai-kikuchi',
+         'HOST' : '127.0.0.1',
+         'PORT' : 5432,
+     }
 }
 
 
@@ -103,6 +109,16 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+TINYMCE_DEFAULT_CONFIG = {
+    'theme': 'advanced',
+    'relative_urls': False,
+    'plugins': 'media',
+    'theme_advanced_buttons1': 'bold,italic,underline,bullist,numlist,\
+                                |, formatselect, fontselect, fontsizeselect,\
+                                |, media,link,unlink,image',
+    'theme_advanced_resizing': True,
+    'theme_advanced_path': False,
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/

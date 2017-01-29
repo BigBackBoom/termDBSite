@@ -7,5 +7,3 @@ def index(request):
     context = {}
     template = loader.get_template('termDBFront/index.html')
     return HttpResponse(template.render(context, request))
-
-
